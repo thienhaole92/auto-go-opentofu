@@ -1,0 +1,38 @@
+# Terragrunt
+.terragrunt-cache
+.terragrunt-stack
+
+# Terraform/OpenTofu
+.terraform
+terraform.tfvars
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+
+# Secrets are not allowed in general
+*.key
+*.pem
+
+# Secrets are encrypted using git-crypt
+!secrets/*
+
+# OS X
+.history
+.DS_Store
+
+# IntelliJ
+.idea_modules
+*.iml
+*.iws
+*.ipr
+.idea/
+build/
+*/build/
+
+# Ignore Terraform/OpenTofu lock files, as we want to test the Terraform code in these repos with the latest provider
+# versions.
+.terraform.lock.hcl
+
+# Environment variables
+.env
+.tfvars
