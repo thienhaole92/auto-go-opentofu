@@ -10,10 +10,9 @@ variable "environment" {
   type = string
 }
 
-variable "region" {
-  type = string
-}
-
-variable "cidr_block" {
-  type = string
+variable "ssh_keys" {
+  type = list(object({
+    name       = string
+    public_key = string
+  }))
 }

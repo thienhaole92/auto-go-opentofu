@@ -11,11 +11,10 @@ provider "digitalocean" {
   token = var.do_token
 }
 
-module "vpc" {
-  source = "../../modules/vpc"
+module "ssh" {
+  source = "../../modules/ssh"
 
   project_name = var.project_name
   environment  = var.environment
-  region       = var.region
-  cidr_block   = var.cidr_block
+  ssh_keys     = var.ssh_keys
 }
