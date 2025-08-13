@@ -8,3 +8,17 @@ resource "digitalocean_project" "default" {
   purpose     = var.purpose
   environment = var.environment
 }
+
+# The following resource types can be associated with a project:
+# - Database Clusters
+# - Domains
+# - Droplets
+# - Floating IP
+# - Load Balancers
+# - Spaces Bucket
+# - Volume
+
+resource "digitalocean_project_resources" "default" {
+  project   = digitalocean_project.default.id
+  resources = var.resources
+}

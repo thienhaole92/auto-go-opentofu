@@ -10,12 +10,3 @@ terraform {
 provider "digitalocean" {
   token = var.do_token
 }
-
-module "project" {
-  source = "../../modules/project"
-
-  project_name = var.project_name
-  purpose      = var.purpose
-  environment  = var.environment
-  resources    = []
-}
