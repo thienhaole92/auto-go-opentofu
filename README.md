@@ -32,8 +32,8 @@ export SPACES_ACCESS_KEY="..."          # R/W only for state bucket
 export SPACES_SECRET_KEY="..."          # Encrypt with GPG
 
 # State Configuration
-export TF_STATE_BUCKET="org-tfstate-${ENV}"
-export TF_STATE_REGION="nyc3"
+export TF_STATE_BUCKET_NAME="..."
+export TF_STATE_BUCKET_ENDPOINT="..."
 ```
 
 ## 🚀 Deployment Workflows
@@ -85,10 +85,8 @@ environments/
       └── nyc3/
           ├── droplet/
           │   ├── terragrunt.hcl
-          │   └── variables.tf
           └── vpc/
               ├── terragrunt.hcl
-              └── outputs.tf
 ```
 
 ## 💡 Pro Tips
