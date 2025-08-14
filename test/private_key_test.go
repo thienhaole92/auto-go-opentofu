@@ -13,7 +13,7 @@ func TestModulePrivateKey(t *testing.T) {
 
 	terraformOptions := &terraform.Options{
 		TerraformDir:    "../examples/private_key",
-		TerraformBinary: "tofu",
+		TerraformBinary: TerraformBinary,
 		Vars:            map[string]any{},
 	}
 

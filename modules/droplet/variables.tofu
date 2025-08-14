@@ -90,7 +90,7 @@ variable "os_image" {
 }
 
 variable "ssh_keys" {
-  description = "List of SSH key fingerprints for access"
+  description = "A list of SSH key IDs or fingerprints for access"
   type        = list(string)
   default     = []
   validation {

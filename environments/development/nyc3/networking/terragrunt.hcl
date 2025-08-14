@@ -3,7 +3,7 @@ include "root" {
 }
 
 terraform {
-  source = "../../../..//modules/project"
+  source = "../../../..//modules/networking"
 }
 
 dependency "droplet" {
@@ -28,6 +28,6 @@ dependency "droplet" {
 }
 
 inputs = {
-  purpose   = "Golang CI-CD Pipeline Testing"
-  resources = dependency.droplet.outputs.urns
+  ssh_allowed = ["0.0.0.0/0", "::/0"]
+  tags        = [dependency.droplet.outputs.tag_id],
 }

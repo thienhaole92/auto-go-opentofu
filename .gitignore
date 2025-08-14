@@ -33,6 +33,9 @@ build/
 # versions.
 .terraform.lock.hcl
 
+# Lambda deployment packages
+*.zip
+
 # Environment variables
 .env
 .tfvars

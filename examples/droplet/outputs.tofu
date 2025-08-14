@@ -1,7 +1,11 @@
-output "instances" {
-  value = module.droplet.instances
+output "droplets" {
+  value = module.droplet.droplets
 }
 
-output "instance_tag_id" {
-  value = module.droplet.instance_tag_id
+output "tag_id" {
+  value = module.droplet.tag_id
+}
+
+output "urns" {
+  value = module.droplet.urns
 }

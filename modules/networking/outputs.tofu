@@ -32,7 +32,6 @@ output "firewall_status" {
     }
 
     metadata = {
-      deployed_at  = timestamp()
       tf_workspace = terraform.workspace
       environment  = var.environment
     }

@@ -14,17 +14,19 @@ func TestModuleDroplet(t *testing.T) {
 
 	terraformOptions := &terraform.Options{
 		TerraformDir:    "../examples/droplet",
-		TerraformBinary: "tofu",
+		TerraformBinary: TerraformBinary,
 		Vars: map[string]any{
 			"do_token":       os.Getenv("DO_TOKEN"),
-			"project_name":   "auto-go",
-			"environment":    "development",
+			"project_name":   ProjectName,
+			"environment":    Environment,
 			"vpc_uuid":       "",
-			"region":         "nyc1",
+			"region":         Region,
 			"instance_count": 1,
 			"instance_size":  "s-1vcpu-1gb-amd",
 			"os_image":       "ubuntu-25-04-x64",
-			"ssh_keys":       []string{},
+			"ssh_keys": []string{
+				"77:37:9a:f3:ad:08:54:0a:e7:16:9d:bb:e2:04:45:11",
+			},
 		},
 	}
 

@@ -14,11 +14,11 @@ func TestModuleSSH(t *testing.T) {
 
 	terraformOptions := &terraform.Options{
 		TerraformDir:    "../examples/ssh",
-		TerraformBinary: "tofu",
+		TerraformBinary: TerraformBinary,
 		Vars: map[string]any{
 			"do_token":     os.Getenv("DO_TOKEN"),
-			"project_name": "auto-go",
-			"environment":  "development",
+			"project_name": ProjectName,
+			"environment":  Environment,
 			"ssh_keys": []map[string]string{
 				{
 					"name":       "test-user",

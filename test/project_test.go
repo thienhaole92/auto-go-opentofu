@@ -20,12 +20,12 @@ func TestModuleProject(t *testing.T) {
 
 	terraformOptions := &terraform.Options{
 		TerraformDir:    "../examples/project",
-		TerraformBinary: "tofu",
+		TerraformBinary: TerraformBinary,
 		Vars: map[string]any{
 			"do_token":     os.Getenv("DO_TOKEN"),
-			"project_name": "auto-go",
+			"project_name": ProjectName,
+			"environment":  Environment,
 			"purpose":      "Golang CI-CD Pipeline Testing",
-			"environment":  "development",
 		},
 	}
 

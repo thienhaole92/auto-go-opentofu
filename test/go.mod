@@ -1,8 +1,6 @@
 module github.com/thienhaole92/auto-go-opentofu
 
-go 1.23.0
-
-toolchain go1.24.6
+go 1.24.6
 
 require github.com/gruntwork-io/terratest v0.50.0
 
