@@ -28,7 +28,7 @@ dependency "droplet" {
 }
 
 inputs = {
-  ssh_allowed          = ["0.0.0.0/0", "::/0"]
-  tags                 = [dependency.droplet.outputs.tag_id],
-  application_firewall = [9080]
+  ssh_allowed       = ["0.0.0.0/0", "::/0"]
+  tags              = [dependency.droplet.outputs.tag_id],
+  allowed_tcp_ports = [9080]
 }
