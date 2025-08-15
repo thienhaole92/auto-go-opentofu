@@ -16,11 +16,12 @@ func TestModuleNetworking(t *testing.T) {
 		TerraformDir:    "../examples/networking",
 		TerraformBinary: TerraformBinary,
 		Vars: map[string]any{
-			"do_token":     os.Getenv("DO_TOKEN"),
-			"project_name": ProjectName,
-			"environment":  Environment,
-			"ssh_allowed":  []string{"0.0.0.0/0", "::/0"},
-			"tags":         []string{},
+			"do_token":          os.Getenv("DIGITALOCEAN_TOKEN"),
+			"project_name":      ProjectName,
+			"environment":       Environment,
+			"ssh_allowed":       []string{"0.0.0.0/0", "::/0"},
+			"tags":              []string{},
+			"allowed_tcp_ports": []int{9080,9090},
 		},
 	}
 

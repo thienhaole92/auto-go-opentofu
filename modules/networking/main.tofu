@@ -78,3 +78,31 @@ resource "digitalocean_firewall" "web" {
     destination_addresses = local.any_ip
   }
 }
+
+resource "digitalocean_firewall" "application_firewall" {
+  count = length(var.allowed_tcp_ports) > 0 ? 1 : 0
+  
+  name = var.allowed_tcp_ports != [] ? format(
+    "%s-fw-%s",
+    local.resource_prefix,
+    join("-", compact([
+      for port in sort(var.allowed_tcp_ports) :
+      lookup({
+        3306 = "mysql",
+        5432 = "postgres"
+      }, port, "port${port}")
+    ]))
+  ) : "${local.resource_prefix}-fw-default"
+
+  tags = var.tags
+
+  # Dynamic inbound rules for all specified ports
+  dynamic "inbound_rule" {
+    for_each = toset(var.allowed_tcp_ports) # Using toset to avoid duplicates
+    content {
+      protocol         = "tcp"
+      port_range       = inbound_rule.key
+      source_addresses = local.any_ip
+    }
+  }
+}

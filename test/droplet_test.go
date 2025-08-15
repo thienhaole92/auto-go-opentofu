@@ -16,7 +16,7 @@ func TestModuleDroplet(t *testing.T) {
 		TerraformDir:    "../examples/droplet",
 		TerraformBinary: TerraformBinary,
 		Vars: map[string]any{
-			"do_token":       os.Getenv("DO_TOKEN"),
+			"do_token":       os.Getenv("DIGITALOCEAN_TOKEN"),
 			"project_name":   ProjectName,
 			"environment":    Environment,
 			"vpc_uuid":       "",

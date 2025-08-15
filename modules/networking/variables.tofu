@@ -49,3 +49,15 @@ variable "environment" {
     error_message = "Environment must be one of: development, staging, production."
   }
 }
+
+variable "allowed_tcp_ports" {
+  description = "List of TCP ports to allow through the firewall"
+  type        = list(number)
+  default     = []
+  validation {
+    condition = alltrue([
+      for port in var.allowed_tcp_ports : port > 0 && port <= 65535
+    ])
+    error_message = "Ports must be between 1 and 65535."
+  }
+}

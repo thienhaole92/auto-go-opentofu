@@ -16,7 +16,7 @@ func TestModuleSSH(t *testing.T) {
 		TerraformDir:    "../examples/ssh",
 		TerraformBinary: TerraformBinary,
 		Vars: map[string]any{
-			"do_token":     os.Getenv("DO_TOKEN"),
+			"do_token":     os.Getenv("DIGITALOCEAN_TOKEN"),
 			"project_name": ProjectName,
 			"environment":  Environment,
 			"ssh_keys": []map[string]string{

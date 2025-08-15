@@ -14,8 +14,9 @@ provider "digitalocean" {
 module "networking" {
   source = "../../modules/networking"
 
-  project_name = var.project_name
-  environment  = var.environment
-  ssh_allowed  = var.ssh_allowed
-  tags         = var.tags
+  project_name      = var.project_name
+  environment       = var.environment
+  ssh_allowed       = var.ssh_allowed
+  tags              = var.tags
+  allowed_tcp_ports = var.allowed_tcp_ports
 }

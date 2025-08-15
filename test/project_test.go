@@ -8,8 +8,8 @@ import (
 )
 
 func SkipIfDoTokenNotSet(t *testing.T) {
-	if os.Getenv("DO_TOKEN") == "" {
-		t.Skip("DO_TOKEN environment variable not set, skipping the test")
+	if os.Getenv("DIGITALOCEAN_TOKEN") == "" {
+		t.Skip("DIGITALOCEAN_TOKEN environment variable not set, skipping the test")
 	}
 }
 
@@ -22,7 +22,7 @@ func TestModuleProject(t *testing.T) {
 		TerraformDir:    "../examples/project",
 		TerraformBinary: TerraformBinary,
 		Vars: map[string]any{
-			"do_token":     os.Getenv("DO_TOKEN"),
+			"do_token":     os.Getenv("DIGITALOCEAN_TOKEN"),
 			"project_name": ProjectName,
 			"environment":  Environment,
 			"purpose":      "Golang CI-CD Pipeline Testing",

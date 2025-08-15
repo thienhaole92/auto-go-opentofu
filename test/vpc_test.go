@@ -16,7 +16,7 @@ func TestModuleVPC(t *testing.T) {
 		TerraformDir:    "../examples/vpc",
 		TerraformBinary: TerraformBinary,
 		Vars: map[string]any{
-			"do_token":     os.Getenv("DO_TOKEN"),
+			"do_token":     os.Getenv("DIGITALOCEAN_TOKEN"),
 			"project_name": ProjectName,
 			"environment":  Environment,
 			"region":       Region,

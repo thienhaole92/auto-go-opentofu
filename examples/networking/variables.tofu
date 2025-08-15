@@ -17,3 +17,7 @@ variable "project_name" {
 variable "environment" {
   type = string
 }
+
+variable "allowed_tcp_ports" {
+  type = list(number)
+}
